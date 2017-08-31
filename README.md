@@ -3,8 +3,8 @@
 ## Нейросетевой лемматизатор на базе архитектуры seq2seq
 
 Обучение по корпусу, состоящему из эталонных пар СЛОВО-ЛЕММА, реализовано
-в модуле Console/PyModels/CharSeq2Seq/src/word2lemma_train.py. Используется
-sequence2sequence архитектура. Входное слово представляется цепочкой символов,
+в модуле [Console/PyModels/CharSeq2Seq/src/word2lemma_train.py](https://github.com/Koziev/word2lemma/blob/master/Console/PyModels/CharSeq2Seq/src/word2lemma_train.py).
+Используется sequence2sequence архитектура. Входное слово представляется цепочкой символов,
 которые упаковываются первой половиной рекуррентной нейросети в вектор
 фиксированной длины. Далее вторая половина нейросети на основе вектора слова
 строит цепочку символов леммы.
@@ -13,12 +13,12 @@ sequence2sequence архитектура. Входное слово предст
 модель, предобученную на полном грамматическом словаре, поэтому можно сразу перейти ко второй
 программе в этом наборе.
 
-Тестовая часть лемматизатора реализована в модуле Console/PyModels/CharSeq2Seq/src/word2lemma_predict.py.
+Тестовая часть лемматизатора реализована в модуле [Console/PyModels/CharSeq2Seq/src/word2lemma_predict.py](https://github.com/Koziev/word2lemma/blob/master/Console/PyModels/CharSeq2Seq/src/word2lemma_predict.py).
 Он загружает подготовленные первой программой данные и печатает леммы
 для вводимых с консоли слов. Для использования просто запустите скрипт в консоли и затем
 вводите слова по приглашению. Результат лемматизации будет печататься в консоли.
 
-Простой REST API лемматизатора реализован с использованием пакетов [flask](http://flask.pocoo.org/docs/0.12/) и
+Простой [REST API лемматизатора](https://github.com/Koziev/word2lemma/blob/master/Console/PyModels/CharSeq2Seq/src/word2lemma_restapi.py) реализован с использованием пакетов [flask](http://flask.pocoo.org/docs/0.12/) и
 [flask-restful](https://flask-restful.readthedocs.io/en/latest/index.html). Я не могу рекомендовать
 данный способ для использования под нагрузкой без предварительного тестирования поведения
 нейросетевой части реализации, особенно с GPU backend. Тем не менее, в качестве стартовой точки
